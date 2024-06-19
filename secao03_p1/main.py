@@ -64,10 +64,10 @@ async def get_curso(curso_id : int = Path(default=None, title="ID do curso", des
           summary="Adicionar curso",
           response_model=Curso
           )
-async def post_curso(curso: Curso, db: Any = Depends(fake_db)):
+async def post_curso(curso: Curso):
     next_id: int = len(cursos) + 1
-    cursos[next_id] = curso
-    del curso.id
+    curso.id = next_id
+    cursos.append(curso)
     return curso
 
 # Atualizando curso
