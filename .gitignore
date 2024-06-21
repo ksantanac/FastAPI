@@ -4905,3 +4905,7 @@ secao05/venv/Lib/site-packages/pydantic_settings-2.3.3.dist-info/RECORD
 secao05/venv/Lib/site-packages/pydantic_settings-2.3.3.dist-info/REQUESTED
 secao05/venv/Lib/site-packages/pydantic_settings-2.3.3.dist-info/WHEEL
 secao05/venv/Lib/site-packages/pydantic_settings-2.3.3.dist-info/licenses/LICENSE
+secao05/__pycache__/main.cpython-311.pyc
+secao05/api/v1/__pycache__/api.cpython-311.pyc
+secao05/api/v1/endpoints/__pycache__/curso.cpython-311.pyc
+secao05/core/__pycache__/deps.cpython-311.pyc
