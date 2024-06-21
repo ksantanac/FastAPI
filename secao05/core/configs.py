@@ -1,4 +1,6 @@
-from pydantic import BaseSettings
+# from pydantic.settings import BaseSettings
+from pydantic_settings import BaseSettings
+
 
 # Definição da classe de configurações usando Pydantic
 class Settings(BaseSettings):
