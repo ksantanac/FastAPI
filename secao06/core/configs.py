@@ -13,7 +13,14 @@ class Settings(BaseSettings):
     DB_URL: str = "postgresql+asyncpg://postgres:rekaue13@localhost:5432/faculdade"
     DBBaseModel = declarative_base()
     
-    JWT_SECRET: str = ''
+    JWT_SECRET: str = 'hQlNazexOSjAZpcEm9ZH6YrmOWRI9OJn47El7WdC0Gs'
+    """
+    import secrets
+    
+    token: str = secrets.token_urlsafe(32)
+    """
+    
+    
     ALGORITHM: str = 'HS256'
     
     # 60 minutos * 24h * 7 dias
