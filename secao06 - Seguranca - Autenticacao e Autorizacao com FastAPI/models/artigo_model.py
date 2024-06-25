@@ -13,6 +13,7 @@ class ArtigoModel(settings.DBBaseModel):
     id = Column(Integer, primary_key=True, autoincrement=True)  # Coluna ID como chave primária autoincrementável
     titulo = Column(String(256))  # Coluna para o título do artigo, tipo String com até 256 caracteres
     url_fonte = Column(String(256))  # Coluna para a URL da fonte do artigo, tipo String com até 256 caracteres
+    descricao = Column(String(256))
     
     # Coluna para o ID do usuário que criou o artigo, chave estrangeira referenciando a tabela 'usuarios' e coluna 'id'
     usuario_id = Column(Integer, ForeignKey('usuarios.id'))
