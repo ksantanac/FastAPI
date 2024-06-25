@@ -156,3 +156,9 @@ async def login_usuario(form_data: OAuth2PasswordRequestForm = Depends(), db: As
         content={"acess_token": criar_token_acesso(sub=usuario.id), "token_type": "bearer"},
         status_code=status.HTTP_200_OK
     )
+    
+    # Se a autenticação for bem-sucedida, a função criar_token_acesso é chamada para gerar um token de acesso (access_token). O ID do usuário (usuario.id) é passado como o "subject" (sub) do token.
+    # criar_token_acesso é uma função que gera um JWT (JSON Web Token) para autenticação.
+    # Um JSONResponse é retornado com:
+    # O conteúdo (content) contendo o token de acesso e o tipo de token (bearer).
+    # O status HTTP 200 (OK), indicando que a autenticação foi bem-sucedida.
