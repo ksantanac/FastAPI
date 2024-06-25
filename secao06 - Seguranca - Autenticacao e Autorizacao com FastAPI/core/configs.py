@@ -1,5 +1,5 @@
 
-from typing import List
+from typing import List, ClassVar
 
 from pydantic_settings import BaseSettings
 from sqlalchemy.ext.declarative import declarative_base
@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     
     # URL de conexão com o banco de dados PostgreSQL usando asyncpg
     DB_URL: str = "postgresql+asyncpg://postgres:rekaue13@localhost:5432/faculdade"
-    DBBaseModel = declarative_base()
+    DBBaseModel: ClassVar  = declarative_base()
     
     JWT_SECRET: str = 'hQlNazexOSjAZpcEm9ZH6YrmOWRI9OJn47El7WdC0Gs'
     """
