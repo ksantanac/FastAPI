@@ -11,4 +11,4 @@ class ArtigoSchema(SCBaseModel):
     usuario_id : Optional[int]
     
     class Config:
-        orm_mode = True
+        from_attributes = True

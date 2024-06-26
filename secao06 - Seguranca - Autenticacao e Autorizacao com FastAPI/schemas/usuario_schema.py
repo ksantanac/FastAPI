@@ -16,7 +16,7 @@ class UsuarioSchemaBase(SCBaseModel):
     eh_admin: bool = False  # Indica se o usuário é administrador, padrão False se não especificado
 
     class Config:
-        orm_mode = True  # Habilita o modo ORM para converter automaticamente de objetos SQLAlchemy
+        from_attributes = True  # Habilita o modo ORM para converter automaticamente de objetos SQLAlchemy
 
 # Define o esquema para criação de um novo usuário, baseado no esquema base
 class UsuarioSchemaCreate(UsuarioSchemaBase):
