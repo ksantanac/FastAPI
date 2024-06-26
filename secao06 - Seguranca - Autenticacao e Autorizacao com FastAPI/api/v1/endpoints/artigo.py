@@ -28,7 +28,7 @@ async def post_artigo(artigo: ArtigoSchema, usuario_logado: UsuarioModel = Depen
     novo_artigo: ArtigoModel = ArtigoModel(
         titulo=artigo.titulo, 
         descricao=artigo.descricao, 
-        url_fonte=artigo.url_fonte, 
+        url_fonte=str(artigo.url_fonte), 
         usuario_id=usuario_logado.id
     )
     
