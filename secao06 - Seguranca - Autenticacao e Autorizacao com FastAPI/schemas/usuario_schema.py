@@ -9,7 +9,7 @@ from schemas.artigo_schema import ArtigoSchema
 
 # Define o esquema base para dados de usuário (não é um modelo ORM)
 class UsuarioSchemaBase(SCBaseModel):
-    id: Optional[int]  # ID do usuário (opcional porque pode não estar presente em algumas operações)
+    id: Optional[int] = None  # ID do usuário (opcional porque pode não estar presente em algumas operações)
     nome: str  # Nome do usuário (obrigatório)
     sobrenome: str  # Sobrenome do usuário (obrigatório)
     email: EmailStr  # Email do usuário, validado como EmailStr do Pydantic (obrigatório e válido)
