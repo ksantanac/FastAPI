@@ -35,7 +35,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Kaue\OneDrive\Documentos\Cursos\FastAPI\secao06\venv"
+VIRTUAL_ENV="C:\Users\Kaue\OneDrive\Documentos\Cursos\FastAPI\secao06 - Seguranca - Autenticacao e Autorizacao com FastAPI\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
