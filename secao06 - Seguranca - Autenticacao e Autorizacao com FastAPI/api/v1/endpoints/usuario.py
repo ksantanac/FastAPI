@@ -9,6 +9,7 @@ from fastapi.responses import JSONResponse
 # Importa AsyncSession e select do SQLAlchemy para operações assíncronas com o banco de dados
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
+from sqlalchemy.exc import IntegrityError
 
 # Importa os modelos UsuarioModel
 from models.usuario_model import UsuarioModel
@@ -46,11 +47,17 @@ async def post_usuario(usuario: UsuarioSchemaCreate, db: AsyncSession = Depends(
     
     # Adiciona o novo usuário ao banco de dados e confirma a transação
     async with db as session:
-        session.add(novo_usuario)
-        await session.commit()
+        try:
+            session.add(novo_usuario)
+            await session.commit()
         
-        # Retorna o novo usuário criado
-        return novo_usuario
+            # Retorna o novo usuário criado
+            return novo_usuario
+        except IntegrityError:
+            raise HTTPException(
+                status_code=status.HTTP_406_NOT_ACCEPTABLE, 
+                detail="Já existe um usuário com esse e-mail já cadastrado."
+                )
 
 # GET Usuarios
 @router.get("/", response_model=List[UsuarioSchemaBase], status_code=status.HTTP_200_OK)
