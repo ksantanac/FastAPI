@@ -28,8 +28,8 @@ class UsuarioSchemaArtigos(UsuarioSchemaBase):
 
 # Define o esquema para atualização de dados de usuário, baseado no esquema base
 class UsuarioSchemaUp(UsuarioSchemaBase):
-    nome: Optional[str]  # Nome do usuário (opcional para atualização)
-    sobrenome: Optional[str]  # Sobrenome do usuário (opcional para atualização)
-    email: Optional[EmailStr]  # Email do usuário (opcional para atualização)
-    senha: Optional[str]  # Senha do usuário (opcional para atualização)
-    eh_admin: Optional[bool]  # Indicação de administrador (opcional para atualização)
+    nome: Optional[str] = None # Nome do usuário (opcional para atualização)
+    sobrenome: Optional[str] = None # Sobrenome do usuário (opcional para atualização)
+    email: Optional[EmailStr] = None # Email do usuário (opcional para atualização)
+    senha: Optional[str] = None # Senha do usuário (opcional para atualização)
+    eh_admin: Optional[bool] = None # Indicação de administrador (opcional para atualização)
