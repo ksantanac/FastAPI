@@ -85,7 +85,7 @@ async def put_artigo(artigo_id: int, artigo: ArtigoSchema, db: AsyncSession = De
             if artigo.descricao:
                 artigo_up.descricao = artigo.descricao
             if artigo.url_fonte:
-                artigo_up.url_fonte = artigo.url_fonte
+                artigo_up.url_fonte = str(artigo.url_fonte)
             if usuario_logado.id != artigo_up.usuario_id:
                 artigo_up.usuario_id = usuario_logado.id
             
